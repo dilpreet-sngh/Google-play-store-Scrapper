@@ -1,7 +1,7 @@
 class CrawlersController < ApplicationController
 
   def create
-    PlayStoreScrapper.new.process
+    PlayStoreScrapper.new.delay.process
     @categories = Category.includes(apps: :reviews).all
   end
 

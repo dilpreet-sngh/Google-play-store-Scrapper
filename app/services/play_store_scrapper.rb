@@ -5,11 +5,8 @@ class PlayStoreScrapper
 
   attr_reader :page
 
-  def initialize
-    @page = Nokogiri::HTML(open("https://play.google.com/store/apps/top"))
-  end
-
   def process
+    @page = Nokogiri::HTML(open("https://play.google.com/store/apps/top"))
     categories = page.css('.cluster-container')
     categories.each do |category|
       app_category = create_category(category)
