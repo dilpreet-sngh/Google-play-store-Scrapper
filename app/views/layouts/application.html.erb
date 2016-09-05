@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GooglePlayScrapper</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="ajax_loader" class="modal-backdrop fade in loader" style="display: none;">
+  <center><%= image_tag "ajax-loader.gif" %></center>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

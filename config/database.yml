@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: play_development
+
+test:
+  <<: *default
+  database: play_test
+
+production:
+  <<: *default
+  database: <%= ENV['PLAY_PRODUCTION'] %>

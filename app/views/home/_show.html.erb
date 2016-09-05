@@ -1,0 +1,25 @@
+<% @categories.each do |category| %>
+  <div class="col-md-12">
+    <br>
+    <br>
+    <br>
+    <h2><%= category.name %></h2>
+    <br><br>
+    <% category.apps.each do |app| %>
+      <div class="col-md-3">
+        <div >
+          <%= link_to(image_tag(app.image_url), app_path(app)) %>
+        </div>
+        <div>
+          <b><%= link_to app.name, app_path(app) %></b>
+        </div>
+        <div>
+          <%= link_to "Go To APP On Play Store", "https://play.google.com#{ app.link }" %>
+        </div>
+        <div>
+          <%= app.description.truncate(40) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

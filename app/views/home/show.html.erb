@@ -1,0 +1,12 @@
+<center>
+  <h2>
+    <%= link_to 'Scrap google play store', crawlers_path, method: :post, remote: true, class: "btn btn-primary btn-sm" %>
+  </h2>
+  <h2>
+    <%= link_to 'Delete Scraped data', delete_crawlers_path, method: :delete, remote: true, class: "btn btn-primary btn-danger" %>
+  </h2>
+</center>
+
+<div id="data">
+  <%= render 'show' %>
+</div>
